@@ -1,7 +1,7 @@
 import { Wechaty, ScanStatus } from 'wechaty';
 // import { Wechaty } from './wechatyDep';
 import { PuppetService } from 'wechaty-puppet-service';
-import { generate } from 'qrcode-terminal';
+import * as qrcodeTerminal from 'qrcode-terminal';
 import { Low, JSONFile } from 'lowdb';
 import * as path from 'path';
 
@@ -34,7 +34,7 @@ bot
   .on('scan', (qrcode: string, status: ScanStatus) => {
     console.log('on-scan', qrcode);
     if (qrcode) {
-      generate(qrcode, { small: true });
+      qrcodeTerminal.generate(qrcode, { small: true });
     }
   })
   .on('error', () => {
