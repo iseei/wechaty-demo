@@ -1,18 +1,18 @@
 import { Wechaty, ScanStatus } from 'wechaty';
 // import { Wechaty } from './wechatyDep';
 import { PuppetService } from 'wechaty-puppet-service';
-import * as qrcodeTerminal from 'qrcode-terminal';
-import { Low, JSONFile } from 'lowdb';
+import * as qrcode from 'qrcode-terminal';
+// import { Low, JSONFile } from 'lowdb';
 import * as path from 'path';
 
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 
 const bot = Wechaty.instance({
   name: 'demo-bot',
-  puppet: new PuppetService({
-    token: process.env.TOKEN,
-    timeout: 3 * 60,
-  }),
+  // puppet: new PuppetService({
+  //   token: process.env.TOKEN,
+  //   timeout: 3 * 60,
+  // }),
   // puppet: 'wechaty-puppet-service',
   // puppetOptions: {
   //   token: process.env.TOKEN,
@@ -20,21 +20,26 @@ const bot = Wechaty.instance({
   // },
 });
 
-const file = path.join(__dirname, './db/db.json');
-const adapter = new JSONFile(file);
-const db = new Low(adapter);
-(async () => {
-  await db.read();
-  console.log('read:db', db);
-  db.data ||= { posts: [] };
-  db.write();
-})();
+console.log('=============');
+console.log(qrcode.generate('123456'));
+console.log('=============');
+
+
+// const file = path.join(__dirname, './db/db.json');
+// const adapter = new JSONFile(file);
+// const db = new Low(adapter);
+// (async () => {
+//   await db.read();
+//   console.log('read:db', db);
+//   db.data ||= { posts: [] };
+//   db.write();
+// })();
 
 bot
-  .on('scan', (qrcode: string, status: ScanStatus) => {
-    console.log('on-scan', qrcode);
-    if (qrcode) {
-      qrcodeTerminal.generate(qrcode, { small: true });
+  .on('scan', (qr: string, status: ScanStatus) => {
+    console.log('on-scan', qr);
+    if (qr) {
+      qrcode.generate(qr, { small: true });
     }
   })
   .on('error', () => {
