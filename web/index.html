@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ant-design-vue@1.7.8/dist/antd.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ant-design-vue@1.7.8/dist/antd.css">
+
+  <script src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.29.1/moment.js"></script>
+</head>
+
+<body>
+  <div id='root'>
+    <div>
+      <template>
+        <a-button type="primary">Primary Button</a-button>
+        <a-button>Default Button</a-button>
+        <a-button type="dashed">Dashed Button</a-button>
+        <a-button type="text">Text Button</a-button>
+        <a-button type="link">Link Button</a-button>
+      </template>
+      <template>
+        <div>
+          <a-date-picker @change="onChange" />
+          <button v-on:click="onChange">Greet</button>
+          <br />
+        </div>
+      </template>
+    </div>
+    <div>时间：{{message}}</div>
+  </div>
+  <script src="./main.js"></script>
+</body>
+</html>
