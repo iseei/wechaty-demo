@@ -36,4 +36,11 @@ bot
   .on('logout', () => {
     console.log('on-logout');
   })
+  .on('message', (message) => {
+    console.log('message', message);
+  })
+  .on('friendship', (event) => {
+    console.log('friendship', event);
+  })
+  .on('room-invite', () => {})
   .start();
