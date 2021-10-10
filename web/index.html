@@ -7,33 +7,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>App</title>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
-  <script src="https://cdn.jsdelivr.net/npm/ant-design-vue@1.7.8/dist/antd.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ant-design-vue@1.7.8/dist/antd.css">
+  <!-- 引入vue -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/vue-router@4.0.11/dist/vue-router.global.js"></script>
+  <script src="https://unpkg.com/vuex@4.0.2/dist/vuex.global.js"></script>
 
+  <!-- 引入antd -->
+  <script src="https://cdn.jsdelivr.net/npm/ant-design-vue@2.2.8/dist/antd.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ant-design-vue@2.2.8/dist/antd.css">
+
+  <!-- 引入element-plus -->
+  <link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" />
+  <script src="//unpkg.com/element-plus"></script>
+
+  <!-- util libs -->
   <script src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.29.1/moment.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+
 </head>
 
 <body>
   <div id='root'>
-    <div>
-      <template>
-        <a-button type="primary">Primary Button</a-button>
-        <a-button>Default Button</a-button>
-        <a-button type="dashed">Dashed Button</a-button>
-        <a-button type="text">Text Button</a-button>
-        <a-button type="link">Link Button</a-button>
-      </template>
-      <template>
-        <div>
-          <a-date-picker @change="onChange" />
-          <button v-on:click="onChange">Greet</button>
-          <br />
-        </div>
-      </template>
-    </div>
     <div>时间：{{message}}</div>
+    <div>Counter: {{ counter }}</div>
+    <el-button @click="click">elemet的按钮</el-button><br>
+    <a-button type="primary" @click="onChange">antdv的按钮</a-button><br>
   </div>
+  <script>
+    console.log('===========start============');
+    console.log(Vue);
+    console.log(antd);
+  </script>
   <script src="./main.js"></script>
+
 </body>
 </html>
