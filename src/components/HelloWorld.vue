@@ -31,6 +31,14 @@ const count = ref(0)
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
   </p>
+  
+  <a-button type="primary">Primary Button</a-button>
+  <a-button>Default Button</a-button>
+  <a-button type="dashed">Dashed Button</a-button>
+  <a-button type="text">Text Button</a-button>
+  <a-button type="link">Link Button</a-button>
+  <a-date-picker />
+  
 </template>
 
 <style scoped>
