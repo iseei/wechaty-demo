@@ -3,32 +3,28 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "web:dev": "vite --open",
-    "web:build": "vue-tsc --noEmit && vite build",
-    "web:serve": "vite preview",
-    "app:dev": "env-cmd -x ts-node app/main.ts",
-    "app:esm": "env-cmd node --loader ts-node/esm ./app/main.ts"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "env-cmd node --loader ts-node/esm ./src/main.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ant-design-vue": "^2.2.8",
+    "fs-extra": "^10.0.0",
+    "lodash": "^4.17.21",
     "lowdb": "^3.0.0",
     "qrcode-terminal": "^0.12.0",
-    "vue": "^3.2.16",
+    "typescript": "^4.5.4",
     "wechaty": "0.62.3",
-    "wechaty-puppet": "0.41.9",
-    "wechaty-puppet-service": "0.21.11"
+    "wechaty-puppet-service": "^1.10.2"
   },
   "devDependencies": {
-    "@types/node": "^16.10.2",
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "~16.11.17",
     "@types/qrcode-terminal": "^0.12.0",
     "env-cmd": "^10.1.0",
-    "ts-node": "^10.2.1",
-    "typescript": "^4.4.3",
-    "@vitejs/plugin-vue": "^1.9.3",
-    "vite": "^2.6.4",
-    "vue-tsc": "^0.3.0"
+    "tailwindcss": "^3.0.7",
+    "ts-node": "^10.4.0"
   }
 }
