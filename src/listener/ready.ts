@@ -1,9 +1,10 @@
 import { bot } from "../main.js";
 import { DataStore } from "../utils/dataStore.js";
+import { logger } from "../utils/logger.js";
 
 export const onReady = async (a, b) => {
-  console.log('onReady', a, b);
-  console.log((bot.userSelf() as any).payload);
+  logger.info('onReady', a, b);
+  logger.info((bot.userSelf() as any).payload);
   const contacts = await bot.Contact.findAll();
   const rooms = await bot.Room.findAll();
 
@@ -16,7 +17,7 @@ export const onReady = async (a, b) => {
     });
   }
   const cs = contacts.map(d => (d as any).payload);
-  console.log(`contacts total ${cs.length}, rooms total ${rs.length}`);
+  logger.info(`contacts total ${cs.length}, rooms total ${rs.length}`);
   const db = await DataStore.get();
   db.data.contacts = cs;
   db.data.rooms = rs;

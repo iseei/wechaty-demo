@@ -1,5 +1,6 @@
 import { Friendship } from "wechaty";
+import { logger } from "../utils/logger.js";
 
 export const onFriendship = async (friendship: Friendship) => {
-  console.log('onFriendship:', (friendship as any).payload);
+  logger.info('onFriendship:', (friendship as any).payload);
 }

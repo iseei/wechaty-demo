@@ -1,5 +1,6 @@
 import { Message } from "wechaty";
+import { logger } from "../utils/logger.js";
 
 export const onMessage = async (message: Message) => {
-  console.log('onMessage::', message.toString());
+  logger.info('onMessage::', message.toString());
 }

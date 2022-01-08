@@ -6,6 +6,7 @@ import { onReady } from './listener/ready.js';
 import { onLogout } from './listener/logout.js';
 import { onMessage } from './listener/message.js';
 import { onFriendship } from './listener/friendship.js';
+import { logger } from './utils/logger.js';
 const __dirname = path.resolve();
 export const rootPath = __dirname;
 
@@ -24,9 +25,9 @@ bot
   .on('message', onMessage)
   .on('friendship', onFriendship)
 
-  .on('start', () => { console.log('on-start') })
-  .on('dong', () => { console.log('on-dong') })
-  .on('error', () => { console.log('on-error') })
+  .on('start', () => { logger.info('on-start') })
+  .on('dong', () => { logger.info('on-dong') })
+  .on('error', () => { logger.info('on-error') })
   .start();
 
   export { bot }
