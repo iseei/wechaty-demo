@@ -10,12 +10,14 @@ import { MessagePayload } from 'wechaty-puppet/src/schemas/message';
 type RoomItem = RoomPayload & { members: RoomMemberPayload[] };
 
 type DJson = {
+  self: ContactPayload,
   contacts: ContactPayload[]
   rooms: RoomItem[]
   messages: MessagePayload[]
 }
 
 const defaultDJson: DJson = {
+  self: null,
   contacts: [],
   rooms: [],
   messages: [],
